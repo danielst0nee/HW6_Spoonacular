@@ -1,1 +1,7 @@
-* secrets.toml
+# Ignore Python cache and virtual environments
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env  # If using environment variables
+.streamlit/secrets.toml
