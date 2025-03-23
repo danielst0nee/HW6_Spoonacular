@@ -8,6 +8,7 @@ File Description:
 import streamlit as st
 from api_calls import get_random_recipe
 
+
 st.title("Random Recipe Generator")
 
 num_recipes = st.slider("Number of Recipes", 1, 5, 1)

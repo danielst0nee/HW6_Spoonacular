@@ -7,9 +7,9 @@ level = "warning"
 [theme]
 primaryColor="#4294ff"
 backgroundColor="#ef9063"
-secondaryBackgroundColor="#356dde"
+secondaryBackgroundColor="#fa8552"
 textColor="#f7f8fa"
-font="verdana"
+font="sans serif"
 
 [browser]
 gatherUsageStats = false
