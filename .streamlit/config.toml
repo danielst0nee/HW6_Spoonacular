@@ -6,7 +6,7 @@ level = "warning"
 
 [theme]
 primaryColor="#4294ff"
-backgroundColor="#6397ff"
+backgroundColor="#ef9063"
 secondaryBackgroundColor="#356dde"
 textColor="#f7f8fa"
 font="verdana"
