@@ -3,7 +3,7 @@ Author: Daniel Stone
 
 Filename: api_calls.py
 
-File Description: Functions for the Spoonacular API calls
+File Description: Function for the Spoonacular API calls
 """
 import os
 from json import dump, load
@@ -62,6 +62,3 @@ def get_random_recipe(min_health_score: int = 0, num_recipes: int = 1) -> dict:
         if len(recipe_info) >= num_recipes:
             break
     return recipe_info
-
-
-get_random_recipe()

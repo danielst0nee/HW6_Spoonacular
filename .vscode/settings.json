@@ -3,7 +3,7 @@
     "files.autoSave": "onFocusChange",
     "python.terminal.activateEnvironment": true,
     "python.testing.pytestArgs": [
-        "tests"
+        "tests",
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
