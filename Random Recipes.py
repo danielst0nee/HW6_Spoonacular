@@ -25,10 +25,10 @@ for recipe in recipes:
         st.image(recipe["image"])
 
         st.subheader("Recipe Information:")
-        st.write(f"Time: {recipe["time"]} minutes")
-        st.write(f"Servings: {recipe["servings"]}")
-        st.write(f"Health Score: {recipe["health_score"]}")
-        st.write(f"Link: {recipe["link"]}")
+        st.write(f"Time: {recipe['time']} minutes")
+        st.write(f"Servings: {recipe['servings']}")
+        st.write(f"Health Score: {recipe['health_score']}")
+        st.write(f"Link: {recipe['link']}")
 
         st.subheader("Ingredients:")
         st.markdown("\n".join([f" - {ingredient}" for ingredient in recipe["ingredients"]]))
