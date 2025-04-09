@@ -10,6 +10,7 @@ from json import dump, load
 from datetime import timedelta
 from requests import get
 import streamlit as st
+from requests.exceptions import RequestException
 
 
 API_KEY = st.secrets["API_key"]
@@ -21,32 +22,36 @@ def get_random_recipe(min_health_score: int = 0, num_recipes: int = 1) -> dict:
     """
     Gets a random recipe from Spoonacular API
     """
-    data = None
+    recipes = []
 
-    # Trying to load from JSON file first
-    if os.path.exists(RECIPE_DATA_FILE):
+    # Attempts API first
+    try:
+        response = get(f"https://api.spoonacular.com/recipes/random?apiKey={API_KEY}&number=100", timeout=3)
+
+        if response.status_code == 200:
+            data = response.json()
+            recipes = data["recipes"]
+            with open(RECIPE_DATA_FILE, "w", encoding="utf-8") as file:
+                dump(data, file)
+            print("Recipes fetched from API and saved to backup.")
+        else:
+            print(f"API error {response.status_code}. Attempting to load from backup...")
+    except RequestException as e:
+        print(f"API request failed: {e}. Attempting to load from backup...")
+
+    if not recipes and os.path.exists(RECIPE_DATA_FILE):
         try:
             with open(RECIPE_DATA_FILE, "r", encoding="utf-8") as file:
                 data = load(file)
-                recipes = data["recipes"]
-                if recipes:
-                    print("Recipes loaded from backup file")
-        except (OSError, ValueError):
-            print("Initiating API Request...")
-
-    if not data:
-        try:
-            response = get(f"https://api.spoonacular.com/recipes/random?apiKey={API_KEY}&number=100", timeout=3)
-
-            if response.status_code == 200:
-                data = response.json()
-                with open(RECIPE_DATA_FILE, "w", encoding="utf-8") as file:
-                    dump(data, file)
-                recipes = data["recipes"]
-        except Exception as e:
-            print(f"API request failed: {e}")
+                recipes = data.get("recipes", [])
+            print("Reciped loaded from backup file.")
+        except (OSError, ValueError) as e:
+            print(f"Failed to load backup file: {e}")
             return []
 
+    if not recipes:
+        return []
+    
     recipe_info = []
     for recipe in recipes:
         if recipe["healthScore"] >= min_health_score:
