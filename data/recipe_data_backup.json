@@ -1,21 +1,23 @@
 [
     {
-        "health_score": 13.0,
-        "title": "Meat rolls with prosciutto and sage",
-        "image": "https://img.spoonacular.com/recipes/651326-556x370.jpg",
-        "time": 45,
+        "health_score": 33.0,
+        "title": "Restaurant Style Salsa",
+        "image": "https://img.spoonacular.com/recipes/658180-556x370.png",
+        "time": 5,
         "servings": 4,
-        "link": "https://www.foodista.com/recipe/ZFFJCY6F/meat-rolls-with-prosciutto-and-sage",
+        "link": "http://www.foodista.com/recipe/H8G2YH6Z/restaurant-style-salsa",
         "ingredients": [
-            "4 veal or beef flank steaks (600 g)",
-            "2 tsp Vegeta Natur or similar seasoning",
-            "100 g prosciutto, cut into thin slices",
-            "4 sage leaves",
-            "1 tsp corn starch",
-            "200 ml white wine",
-            "2 Tbs olive oil",
-            "2 Tbs butter",
-            "Black pepper"
+            "1 can (28oz) whole tomatoes with juice",
+            "1/2 cup fresh cilantro (large stems removed)",
+            "1 clove garlic, minced",
+            "1/4 - 1/2 t. ground cumin",
+            "1 whole jalapeno, quartered, seeds removed, sliced thin.",
+            "juice from 1/2 a lime",
+            "1/4 of an onion chopped (approximately 1/4 cup)",
+            "2 cans (10oz) Rotel tomatoes (or the store brand of diced tomatoes and green chiles)",
+            "Salt to taste",
+            "1/4 t. Penzey's Southwest seasoning (or another brand)",
+            "1/4 t. sugar"
         ]
     }
 ]
