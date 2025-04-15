@@ -17,6 +17,12 @@ on:
     workflows: [run-tests]
     types:
       - completed
+  push:
+    branches:
+      - main
+     
+
+      
   
 
 jobs:
