@@ -23,7 +23,7 @@ EXPOSE 8501
 ENV PYTHONPATH="/app/src"
 
 ARG SECRET_KEY
-ENV SECRET_KEY $SECRET_KEY
+ENV SECRET_KEY=$SECRET_KEY
 
 # Run the app
 CMD [ "streamlit", "run", "--server.port", "8501", "src/Random Recipes.py" ]
