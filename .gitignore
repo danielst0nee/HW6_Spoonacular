@@ -4,4 +4,4 @@ __pycache__/
 *.pyo
 venv/
 .env  # If using environment variables
-.streamlit/secrets.toml
+
