@@ -6,4 +6,4 @@
  !words.txt
  !/data
  !.env
- !*.json
+ !/data/recipe_data.json
