@@ -1,7 +1,6 @@
 # Random Recipe Generator
 
-![Test Status](https://img.shields.io/github/actions/workflow/status/danielst0nee/HW6_Spoonacular/python-test.yml?label=tests)
-![Build Status](https://img.shields.io/github/actions/workflow/status/danielst0nee/HW6_Spoonacular/docker-publish.yml?label=build)
+![Python Test](https://github.com/danielst0nee/HW6_Spoonacular/actions/workflows/python-test.yml/badge.svg) ![Docker Publish](https://github.com/danielst0nee/HW6_Spoonacular/actions/workflows/docker-publish.yml/badge.svg)
 ![License](https://img.shields.io/github/license/danielst0nee/HW6_Spoonacular)
 
 This application is meant for those who like to cook, but are tired of making the same meals over and over again. Random Recipe Generator uses the Spoonacular API to generate a number of different recipes and allows the user to choose the health level of their recipes.
