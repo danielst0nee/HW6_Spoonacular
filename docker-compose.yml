@@ -1,0 +1,7 @@
+services:
+  Random_Recipes:
+    container_name: Random_Recipes
+    build:
+      dockerfile: Dockerfile
+      args:
+        - API_KEY=$API_KEY

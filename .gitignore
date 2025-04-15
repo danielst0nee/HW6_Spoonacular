@@ -4,4 +4,6 @@ __pycache__/
 *.pyo
 venv/
 .env  # If using environment variables
+.vscode/
+.pytest_cache/
 
