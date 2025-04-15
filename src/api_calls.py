@@ -35,12 +35,14 @@ def get_random_recipe(min_health_score: int = 0, num_recipes: int = 1) -> dict:
     # Attempts API first
     try:
         response = get(f"https://api.spoonacular.com/recipes/random?apiKey={API_KEY}&number=100", timeout=3)
-
+        print(f"Using API key: {API_KEY}")
+        print(f"Making request to: https://api.spoonacular.com/recipes/random?apiKey={API_KEY}&number=100")
+        print(f"Response status code: {response.status_code}")
         if response.status_code == 200:
             data = response.json()
             recipes = data["recipes"]
             with open(RECIPE_DATA_FILE, "w", encoding="utf-8") as file:
-                dump(data, file)
+               dump(data, file)
             print("Recipes fetched from API and saved to backup.")
         else:
             print(f"API error {response.status_code}. Attempting to load from backup...")
@@ -73,4 +75,7 @@ def get_random_recipe(min_health_score: int = 0, num_recipes: int = 1) -> dict:
             })
         if len(recipe_info) >= num_recipes:
             break
+
     return recipe_info
+
+my_recipes = get_random_recipe(min_health_score=10, num_recipes=3)

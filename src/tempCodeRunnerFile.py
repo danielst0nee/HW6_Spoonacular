@@ -1,6 +1,4 @@
-env_path = Path(__file__).resolve().parents[1] / '.env'
-load_dotenv(dotenv_path=env_path)
-API_KEY = os.getenv("SECRET_KEY")
-if not API_KEY:
-    raise ValueError("SECRET_KEY is not set")
-print(API_KEY)
+        print(f"Using API key: {API_KEY}")
+        print(f"Making request to: https://api.spoonacular.com/recipes/random?apiKey={API_KEY}&number=100")
+        print(f"Response status code: {response.status_code}")
+        print(f"Response text: {response.text}")
