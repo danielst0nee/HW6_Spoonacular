@@ -64,6 +64,5 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            SECRET_KEY=
-            ${{ secrets.SECRET_KEY }}
+            SECRET_KEY=${{ secrets.SECRET_KEY }}
       
