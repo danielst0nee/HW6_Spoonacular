@@ -16,9 +16,6 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 # Copy .env file to the container
 COPY .env /app/.env
 
-# Copy the data directory into the container
-# COPY ./data /app/data
-
 # Specify necessary ports and set run to default command to run app
 EXPOSE 8501
 
@@ -26,7 +23,7 @@ EXPOSE 8501
 ENV PYTHONPATH="/app/src"
 
 ARG SECRET_KEY
-ENV SECRET_KEY = $SECRET_KEY
+ENV SECRET_KEY $SECRET_KEY
 
 # Run the app
 CMD [ "streamlit", "run", "--server.port", "8501", "src/Random Recipes.py" ]
