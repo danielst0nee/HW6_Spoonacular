@@ -7,20 +7,25 @@ File Description: Function for the Spoonacular API calls
 """
 import os
 from dotenv import load_dotenv
+from pathlib import Path
 from json import dump, load
 from datetime import timedelta
 from requests import get
 import streamlit as st
 from requests.exceptions import RequestException
 
-load_dotenv()
+
+# Point to the correct .env file
+env_path = Path(__file__).resolve().parents[1] / '.env'
+load_dotenv(dotenv_path=env_path, override=True)
+
 API_KEY = os.getenv("SECRET_KEY")
 if not API_KEY:
     raise ValueError("SECRET_KEY is not set")
+
 RECIPE_DATA_FILE = "data/recipe_data.json"
 
 
-@st.cache_data(show_spinner="Finding delicious recipes...", ttl=timedelta(days=1))
 def get_random_recipe(min_health_score: int = 0, num_recipes: int = 1) -> dict:
     """
     Gets a random recipe from Spoonacular API
