@@ -1,22 +1,21 @@
 [
     {
-        "health_score": 47.0,
-        "title": "Pork chops with cider and spinach",
-        "image": "https://img.spoonacular.com/recipes/656746-556x370.jpg",
-        "time": 30,
+        "health_score": 13.0,
+        "title": "Meat rolls with prosciutto and sage",
+        "image": "https://img.spoonacular.com/recipes/651326-556x370.jpg",
+        "time": 45,
         "servings": 4,
-        "link": "http://www.foodista.com/recipe/TRQ4KBB5/pork-chops-with-cider-and-spinach",
+        "link": "https://www.foodista.com/recipe/ZFFJCY6F/meat-rolls-with-prosciutto-and-sage",
         "ingredients": [
-            "1 Tbs butter",
-            "2 Tbs Dijon mustard",
-            "400 ml cider",
-            "2-3 Tbs olive oil",
-            "2 onions, coarsely sliced",
-            "4 pork chops",
-            "Salt and pepper",
-            "2 Tbs pork seasoning mix",
-            "250 ml sour cream",
-            "400 g spinach, cleaned and washed"
+            "4 veal or beef flank steaks (600 g)",
+            "2 tsp Vegeta Natur or similar seasoning",
+            "100 g prosciutto, cut into thin slices",
+            "4 sage leaves",
+            "1 tsp corn starch",
+            "200 ml white wine",
+            "2 Tbs olive oil",
+            "2 Tbs butter",
+            "Black pepper"
         ]
     }
 ]
