@@ -1,22 +1,21 @@
 [
     {
-        "health_score": 7.0,
-        "title": "Blueberry, Chocolate & Cocao Superfood Pancakes - Gluten-Free/Paleo/Vegan",
-        "image": "https://img.spoonacular.com/recipes/1100990-556x370.jpg",
-        "time": 30,
-        "servings": 2,
-        "link": "https://www.foodista.com/recipe/35NX6PZB/blueberry-chocolate-cocao-superfood-pancakes-gluten-free-paleo-vegan",
+        "health_score": 33.0,
+        "title": "Mexi-Chicken Roll Ups",
+        "image": "https://img.spoonacular.com/recipes/651546-556x370.jpg",
+        "time": 45,
+        "servings": 6,
+        "link": "https://www.foodista.com/recipe/ZJVS63JS/mexi-chicken-roll-ups",
         "ingredients": [
-            "1/2 cup almond flour",
-            "1/2 cup coconut flour",
-            "1 cup tapioca/arrowroot flour",
-            "1 cup nut/hemp/coconut milk",
-            "1 tsp. baking powder",
-            "1 tsp. vanilla bean paste/extract",
-            "Pinch Himalayan sea salt",
-            "Handful frozen blueberries",
-            "Handful organic cacao nibs",
-            "Handful of dark chocolate, roughly chopped"
+            "4 Oz Cream Cheese",
+            "1/2 cup Salsa Verde",
+            "1 Small Bunch Cilantro, Chopped",
+            "1 teaspoon Cumin",
+            "1/2 teaspoon Garlic Powder",
+            "6 Chicken Breasts",
+            "3 ounces Fresh Spinach",
+            "3 Oz Pepper Jack Cheese, Shredded",
+            "6 ounces Tortilla Chips, Crushed"
         ]
     }
 ]
