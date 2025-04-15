@@ -14,7 +14,7 @@ import streamlit as st
 from requests.exceptions import RequestException
 
 load_dotenv()
-API_KEY = os.getenv("API_KEY")
+API_KEY = os.getenv("SECRET_KEY")
 RECIPE_DATA_FILE = "data/recipe_data.json"
 
 

@@ -17,10 +17,7 @@ on:
     workflows: [run-tests]
     types:
       - completed
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+
 
       
   
@@ -64,4 +61,4 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            API_KEY=${{ secrets.API_KEY }}
+            SECRET_KEY=${{ secrets.API_KEY }}
