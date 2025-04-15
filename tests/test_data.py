@@ -3,7 +3,7 @@ Author: Daniel Stone
 
 Filename: test_data.py
 
-File Description: This file provides test cases for the Random Recipe Generator application.
+File Description: This file tests the request of the get_random_recipe() method
 """
 import sys
 import os
