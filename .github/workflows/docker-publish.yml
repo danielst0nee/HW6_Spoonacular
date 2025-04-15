@@ -1,12 +1,3 @@
-# File: docker-publish.yml
-# Author: Daniel Stone
-# Date: 04/15/2025
-# Description: GitHub Actions workflow to build and publish a docker image to the GitHub Container Registry.
-# This workflow will build a docker image and publish it to the GitHub Container Registry.
-# This workflow creates a Multi-platform image with GitHub Actions, for linux/amd64,linux/arm64/v8
-# 
-# NOTE: Based on GitHub Actions: "Publish Docker Container"
-
 name: docker-publish
 env:
   REGISTRY: ghcr.io # GitHub Container Registry
@@ -18,10 +9,6 @@ on:
     types:
       - completed
 
-
-      
-  
-
 jobs:
   publish-docker-image:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
@@ -29,7 +16,16 @@ jobs:
     permissions:
       contents: read
       packages: write
+      attestations: write
+      id-token: write
+    
     steps:
+      # QEMU is a generic and open source machine & userspace emulator and virtualizer.
+      # Buildx is a Docker CLI plugin for extended build capabilities with BuildKit.
+      # It provides the same functionality as docker build with many new features.
+      # The docker/setup-qemu-action action sets up QEMU for use in GitHub Actions.
+      # The docker/setup-buildx-action action sets up Docker Buildx for use in GitHub Actions.
+      # The docker/build-push-action action builds and pushes Docker images to a registry.            
       - name: convert IMAGE_NAME to lowercase, setup QEMU and Buildx
         run: |
           echo "REGISTRY=${REGISTRY}" >> $GITHUB_ENV
@@ -50,15 +46,30 @@ jobs:
             registry: ${{ env.REGISTRY }}
             username: ${{ github.actor }}
             password: ${{ secrets.GITHUB_TOKEN }}          
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
+        id: push
         uses: docker/build-push-action@v6
         with:
           context: .
           platforms: linux/amd64,linux/arm64/v8
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           build-args: |
-            SECRET_KEY=${{ secrets.SECRET_KEY }}
+            SECRET_KEY=
+            ${{ secrets.SECRET_KEY }}
+      
+      - name: Generate artifact attestation
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
+          subject-digest: ${{ steps.push.outputs.digest }}
+          push-to-registry: true
