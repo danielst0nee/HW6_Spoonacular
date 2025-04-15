@@ -1,5 +1,9 @@
 # Random Recipe Generator
 
+![Build Status](https://img.shields.io/github/workflow/status/danielst0nee/HW6_Spoonacular/CI)
+![Test Status](https://img.shields.io/github/actions/workflow/status/danielst0nee/HW6_Spoonacular/test.yml)
+![License](https://img.shields.io/github/license/danielst0nee/HW6_Spoonacular)
+
 This application is meant for those who like to cook, but are tired of making the same meals over and over again. Random Recipe Generator uses the Spoonacular API to generate a number of different recipes and allows the user to choose the health level of their recipes.
 
 This application was developed using Python and Streamlit
@@ -12,4 +16,4 @@ This application was developed using Python and Streamlit
 - Time allotted for recipe
 - Links to full recipe if user wants to make it themselves
 
-Link to application: 
+Link to application: http://160.2.197.94:8501 
