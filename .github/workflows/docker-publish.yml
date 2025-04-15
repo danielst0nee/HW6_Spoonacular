@@ -5,7 +5,7 @@ env:
 
 on:
   workflow_run:
-    workflows: [python-test]
+    workflows: [run-tests]
     types:
       - completed
 

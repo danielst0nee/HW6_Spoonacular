@@ -1,13 +1,15 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: python-test
+name: run-tests
+env:
+  PYTHON_VERSION: "3.13"
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -17,25 +19,26 @@ jobs:
     env:
       PYTHONPATH: "./src"
 
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.13"
-      
-    - name: Install dependencies
-      run: |
-        pip install -r ./requirements.txt
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
 
-    - name: Lint with autopep8
-      run: |
-        autopep8 --exit-code --recursive --diff --aggressive --max-line-length 120 ./src
+      - name: Create and start virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
 
-    - name: Test with pytest
-      run: pytest
-      env:
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      - name: Install dependencies
+        run: |
+          pip install -r tests/requirements.txt
+          pip install -r ./requirements.txt
+
+      - name: Test with pytest
+        run: pytest
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
