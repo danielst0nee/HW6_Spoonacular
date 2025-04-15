@@ -15,6 +15,8 @@ from requests.exceptions import RequestException
 
 load_dotenv()
 API_KEY = os.getenv("SECRET_KEY")
+if not API_KEY:
+    raise ValueError("SECRET_KEY is not set")
 RECIPE_DATA_FILE = "data/recipe_data.json"
 
 

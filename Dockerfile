@@ -14,7 +14,7 @@ COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # Copy .env file to the container
-COPY .env /app/.env
+#COPY .env /app/.env
 
 # Specify necessary ports and set run to default command to run app
 EXPOSE 8501
