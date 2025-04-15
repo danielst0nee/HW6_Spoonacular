@@ -51,7 +51,6 @@ def get_random_recipe(min_health_score: int = 0, num_recipes: int = 1) -> dict:
 
     if not recipes:
         return []
-    
     recipe_info = []
     for recipe in recipes:
         if recipe["healthScore"] >= min_health_score:
