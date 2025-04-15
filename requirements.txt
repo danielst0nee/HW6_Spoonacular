@@ -1,3 +1,4 @@
 streamlit
+pytest
 autopep8
 dotenv
