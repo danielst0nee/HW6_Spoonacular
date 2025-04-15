@@ -16,7 +16,7 @@ jobs:
   build:
     env:
       PYTHONPATH: "./src"
-      API_KEY: ${{ secrets.API_KEY}}
+      SECRET_KEY: ${{ secrets.SECRET_KEY}}
 
 
     runs-on: ubuntu-latest
