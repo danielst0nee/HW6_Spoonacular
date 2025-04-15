@@ -6,14 +6,15 @@ Filename: api_calls.py
 File Description: Function for the Spoonacular API calls
 """
 import os
+from dotenv import load_dotenv
 from json import dump, load
 from datetime import timedelta
 from requests import get
 import streamlit as st
 from requests.exceptions import RequestException
 
-
-API_KEY = st.secrets["API_key"]
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
 RECIPE_DATA_FILE = "data/recipe_data.json"
 
 
