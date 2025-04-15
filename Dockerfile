@@ -4,7 +4,7 @@ FROM python:3.10-slim
 # Set the working directory
 WORKDIR /app
 
-#Copy elements of /src into container at /app/src
+# Copy elements of /src into container at /app/src
 COPY ./src /app/src
 
 # Copy requirements.txt into the container
@@ -22,6 +22,7 @@ EXPOSE 8501
 # Set environment variables
 ENV PYTHONPATH="/app/src"
 
+# ARG for secret key passed during build
 ARG SECRET_KEY
 ENV SECRET_KEY=$SECRET_KEY
 
