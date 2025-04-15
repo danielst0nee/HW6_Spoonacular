@@ -12,4 +12,6 @@ This application was developed using Python and Streamlit
 - Time allotted for recipe
 - Links to full recipe if user wants to make it themselves
 
-##Preview
+###Access
+
+Link to application: 
