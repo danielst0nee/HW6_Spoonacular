@@ -10,7 +10,7 @@ load_dotenv()
 API_KEY = os.getenv("SECRET_KEY")
 def test_api_key_validity():
     assert API_KEY is not None and API_KEY != "", "API key is missing or empty"
-    #assert API_KEY = f6850151164e4220b30bcb2cbf19a89e5
+    assert API_KEY =="f6850151164e4220b30bcb2cbf19a89e"
 
     # Make a test request to Spoonacular
     url = "https://api.spoonacular.com/recipes/random"

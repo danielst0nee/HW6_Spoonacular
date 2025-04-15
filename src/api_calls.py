@@ -22,7 +22,7 @@ load_dotenv(dotenv_path=env_path, override=True)
 API_KEY = os.getenv("SECRET_KEY")
 if not API_KEY:
     raise ValueError("SECRET_KEY is not set")
-
+print(API_KEY)
 RECIPE_DATA_FILE = "data/recipe_data.json"
 
 
