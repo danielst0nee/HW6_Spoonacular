@@ -4,3 +4,6 @@
  !requirements.txt
  !healthcheck.sh
  !words.txt
+ !/data
+ !.env
+ !*.json

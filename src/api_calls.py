@@ -18,7 +18,7 @@ API_KEY = os.getenv("API_KEY")
 RECIPE_DATA_FILE = "data/recipe_data.json"
 
 
-@st.cache_data(show_spinner="Finding delicious recpipes...", ttl=timedelta(days=1))
+@st.cache_data(show_spinner="Finding delicious recipes...", ttl=timedelta(days=1))
 def get_random_recipe(min_health_score: int = 0, num_recipes: int = 1) -> dict:
     """
     Gets a random recipe from Spoonacular API
