@@ -1,30 +1,24 @@
 # Dockerfile for Random Recipes App
 FROM python:3.10-slim
 
-# Set the working directory
 WORKDIR /app
 
-# Copy elements of /src into container at /app/src
 COPY ./src /app/src
+COPY ./src/pages /app/src/pages 
 
-# Copy requirements.txt into the container
 COPY requirements.txt requirements.txt
-
-# Install required dependencies using pip
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-# Copy .env file to the container
 COPY .env /app/.env
+COPY .streamlit /app/.streamlit
 
-# Specify necessary ports and set run to default command to run app
+# ✅ Create the data directory inside the container
+RUN mkdir -p /app/data
+
 EXPOSE 8501
 
-# Set environment variables
 ENV PYTHONPATH="/app/src"
-
-# ARG for secret key passed during build
 ARG SECRET_KEY
 ENV SECRET_KEY=$SECRET_KEY
 
-# Run the app
 CMD [ "streamlit", "run", "--server.port", "8501", "src/Random Recipes.py" ]

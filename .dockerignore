@@ -1,9 +1,13 @@
-/**
- !/.streamlit
- !/src
- !requirements.txt
- !healthcheck.sh
- !words.txt
- !/data
- !.env
- !/data/recipe_data.json
+# Ignore typical Python stuff
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Ignore virtual environments
+venv/
+
+# Ignore OS / IDE files
+.vscode/
+

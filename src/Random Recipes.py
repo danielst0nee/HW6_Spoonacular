@@ -16,8 +16,8 @@ min_health_score = st.slider("Minimum Health Score", 0, 100, 0)
 
 recipes = get_random_recipe(min_health_score, num_recipes)
 
-if len(recipes) < num_recipes:
-    st.warning(f"Only {len(recipes)} recipes with that health score could be found. Please try again.")
+#if len(recipes) < num_recipes:
+    #st.warning(f"Only {len(recipes)} recipes with that health score could be found. Please try again.")
 
 for recipe in recipes:
     with st.container(border=True):
